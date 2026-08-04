@@ -135,49 +135,11 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background:
-    radial-gradient(120% 90% at 30% 20%, rgba(90, 66, 88, .8), transparent 55%),
-    radial-gradient(100% 80% at 75% 70%, rgba(64, 44, 60, .7), transparent 60%),
-    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.5) 45%, transparent 55%),
-    radial-gradient(1px 1px at 70% 20%, rgba(244,220,143,.55) 45%, transparent 55%),
-    radial-gradient(1.5px 1.5px at 82% 76%, rgba(255,255,255,.4) 45%, transparent 55%),
-    radial-gradient(1px 1px at 38% 82%, rgba(244,220,143,.4) 45%, transparent 55%),
-    linear-gradient(150deg, #241a24 0%, #120d12 55%, #1c131b 100%);
+  background-color: #16101550;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.photo::before {
-  /* hair-silhouette sheen */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(60% 42% at 50% 26%, rgba(0,0,0,.55), transparent 70%),
-    repeating-linear-gradient(100deg, transparent 0 14px, rgba(255,255,255,.025) 14px 16px);
-}
-.photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, .55) 100%);
-}
-.photo__label {
-  position: absolute;
-  z-index: 2;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-script);
-  font-size: 1.6rem;
-  color: var(--gold-lite);
-  white-space: nowrap;
-  text-shadow: 0 2px 8px rgba(0,0,0,.8);
-}
-
-/* subtle per-slot tint variation so the grid doesn't feel cloned */
-.photo--tier2, .photo--curly, .photo--pol2, .photo--prod3, .photo--rev2,
-.photo--ig2, .photo--ig5, .photo--ig8 { filter: hue-rotate(14deg) brightness(1.05); }
-.photo--tier3, .photo--wavy, .photo--prod2, .photo--rev3,
-.photo--ig3, .photo--ig6 { filter: hue-rotate(-12deg) brightness(.96); }
-.photo--prod4, .photo--ig4, .photo--ig7 { filter: saturate(1.15) brightness(1.03); }
 
 /* ---------- gold frame helper ---------- */
 
@@ -399,15 +361,14 @@ button { font-family: inherit; cursor: pointer; }
 
 .hero__corner {
   position: absolute;
-  width: clamp(140px, 22vw, 320px);
+  width: clamp(180px, 26vw, 400px);
   aspect-ratio: 1;
-  background:
-    radial-gradient(2px 2px at 30% 30%, rgba(255,255,255,.9) 40%, transparent 60%),
-    radial-gradient(1.5px 1.5px at 60% 15%, rgba(244,220,143,.9) 40%, transparent 60%),
-    radial-gradient(2px 2px at 15% 65%, rgba(244,220,143,.8) 40%, transparent 60%),
-    radial-gradient(1.5px 1.5px at 75% 55%, rgba(255,255,255,.7) 40%, transparent 60%),
-    radial-gradient(circle at 0% 0%, rgba(212,175,55,.5), rgba(212,175,55,.12) 45%, transparent 70%);
+  background: url("../img/glitter.jpg?v=2") center / cover no-repeat;
+  mix-blend-mode: screen;
+  opacity: .95;
   pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at 0% 0%, #000 35%, transparent 72%);
+  mask-image: radial-gradient(circle at 0% 0%, #000 35%, transparent 72%);
 }
 .hero__corner--tl { top: 0; left: 0; }
 .hero__corner--br { bottom: 0; right: 0; transform: rotate(180deg); }
@@ -438,17 +399,11 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 14px 14px 0 0;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(120% 90% at 30% 20%, rgba(84, 60, 82, .85), transparent 55%),
-    radial-gradient(1.5px 1.5px at 18% 24%, rgba(255,255,255,.5) 45%, transparent 55%),
-    radial-gradient(1px 1px at 74% 16%, rgba(244,220,143,.5) 45%, transparent 55%),
-    radial-gradient(1.5px 1.5px at 84% 70%, rgba(255,255,255,.35) 45%, transparent 55%),
-    linear-gradient(150deg, #251a24 0%, #110c11 55%, #1a121a 100%);
 }
 .tiercard__media::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.6) 100%);
+  background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.72) 100%);
 }
 .tiercard__text {
   position: absolute;
@@ -522,6 +477,12 @@ button { font-family: inherit; cursor: pointer; }
   justify-items: center;
   gap: .7rem;
   padding-bottom: 1.4rem;
+}
+.texturecard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, .72) 100%);
 }
 .texturecard__label {
   position: relative;
@@ -879,3 +840,56 @@ button { font-family: inherit; cursor: pointer; }
   .footer__social, .footer__pay { justify-content: center; }
   .review { margin-top: 3rem; }
 }
+
+/* ==========================================================================
+   REAL IMAGERY — generated campaign photography (img/)
+   ========================================================================== */
+
+.photo--hero { background-image: url("../img/hero.jpg?v=2"); background-position: 50% 20%; }
+
+.photo--tier1 { background-image: url("../img/tier-1.jpg?v=2"); }
+.photo--tier2 { background-image: url("../img/tier-2.jpg?v=2"); }
+.photo--tier3 { background-image: url("../img/tier-3.jpg?v=2"); }
+
+.photo--straight { background-image: url("../img/texture-straight.jpg?v=2"); }
+.photo--curly { background-image: url("../img/texture-curly.jpg?v=2"); }
+.photo--wavy { background-image: url("../img/texture-wavy.jpg?v=2"); }
+
+.photo--pol1 { background-image: url("../img/polaroid-1.jpg?v=2"); }
+.photo--pol2 { background-image: url("../img/polaroid-2.jpg?v=2"); }
+
+.photo--prod1 { background-image: url("../img/product-1.jpg?v=2"); }
+.photo--prod2 { background-image: url("../img/product-2.jpg?v=2"); }
+.photo--prod3 { background-image: url("../img/product-3.jpg?v=2"); }
+.photo--prod4 { background-image: url("../img/product-4.jpg?v=2"); }
+
+.photo--rev1 { background-image: url("../img/texture-wavy.jpg?v=2"); background-position: 50% 10%; }
+.photo--rev2 { background-image: url("../img/polaroid-1.jpg?v=2"); background-position: 50% 14%; }
+.photo--rev3 { background-image: url("../img/tier-2.jpg?v=2"); background-position: 50% 10%; }
+
+.photo--ig1 { background-image: url("../img/ig-1.jpg?v=2"); }
+.photo--ig2 { background-image: url("../img/ig-2.jpg?v=2"); }
+.photo--ig3 { background-image: url("../img/ig-3.jpg?v=2"); }
+.photo--ig4 { background-image: url("../img/ig-4.jpg?v=2"); }
+.photo--ig5 { background-image: url("../img/texture-curly.jpg?v=2"); background-position: 50% 18%; }
+.photo--ig6 { background-image: url("../img/tier-3.jpg?v=2"); background-position: 50% 12%; }
+.photo--ig7 { background-image: url("../img/polaroid-2.jpg?v=2"); background-position: 50% 24%; }
+.photo--ig8 { background-image: url("../img/texture-straight.jpg?v=2"); background-position: 50% 15%; }
+
+/* gold glitter accents on the luxury statement, echoing the mock's corners */
+.luxury::before,
+.luxury::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: clamp(130px, 18vw, 300px);
+  aspect-ratio: 1;
+  background: url("../img/glitter.jpg?v=2") center / cover no-repeat;
+  mix-blend-mode: screen;
+  opacity: .85;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at center, #000 25%, transparent 68%);
+  mask-image: radial-gradient(circle at center, #000 25%, transparent 68%);
+}
+.luxury::before { left: 0; transform: translate(-38%, -50%); }
+.luxury::after { right: 0; transform: translate(38%, -50%) rotate(180deg); }

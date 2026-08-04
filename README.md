@@ -27,14 +27,9 @@ Just open `index.html` in a browser, or serve it:
 python3 -m http.server 8080
 ```
 
-## Swapping in real photography
+## Imagery
 
-All imagery slots use the `.photo` class with styled satin/sparkle placeholders so the layout ships complete without licensed assets. To use real photos, add a background image to any slot:
-
-```css
-.photo--hero { background: url("../img/hero.jpg") center/cover; }
-.photo--prod1 { background: url("../img/body-wave.jpg") center/cover; }
-```
+All campaign photography lives in `img/` (AI-generated, brand-matched: black satin, gold glitter, jet-black luxury hair). Every slot is wired via the `.photo--*` classes at the bottom of `css/styles.css` — to swap any photo, replace the file in `img/` (bump the `?v=` query in the CSS to bust caches) or point the slot's `background-image` at a new file.
 
 Slot names: `photo--hero`, `photo--tier1..3`, `photo--straight/curly/wavy`, `photo--pol1/pol2`, `photo--prod1..4`, `photo--rev1..3`, `photo--ig1..8`.
 
