@@ -186,9 +186,17 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: space-between;
   gap: 1rem;
   padding: .8rem clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(212, 175, 55, .25);
+}
+/* glass effect lives on a pseudo-element: backdrop-filter on .header itself
+   would make it the containing block for the fixed mobile nav panel */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(7, 6, 7, .88);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(212, 175, 55, .25);
 }
 
 .logo { display: inline-flex; flex-direction: column; line-height: 1; }
