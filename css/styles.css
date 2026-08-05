@@ -1,25 +1,25 @@
 /* ==========================================================================
    LuxARRY Hair — Luxury Hair. Effortless Confidence.
-   Black satin • hot pink gloss • champagne gold • diamond shimmer
+   Black satin • soft pink gloss • polished silver • diamond shimmer
    ========================================================================== */
 
 :root {
   --black: #070607;
   --black-2: #100c10;
   --black-3: #191219;
-  --pink: #ff1f8f;
-  --pink-hot: #ff2f9e;
-  --pink-lite: #ff9ac9;
-  --pink-deep: #b3005e;
-  --gold: #d4af37;
-  --gold-lite: #f3dc8f;
-  --gold-deep: #8a6a1f;
-  --cream: #f7f0e6;
+  --pink: #f47fc1;
+  --pink-hot: #f992cc;
+  --pink-lite: #ffcde6;
+  --pink-deep: #cf5d9c;
+  --gold: #c5cbd6;      /* silver — legacy var names kept for stability */
+  --gold-lite: #eef1f7;
+  --gold-deep: #8d94a2;
+  --cream: #f4f2f4;
   --white: #ffffff;
-  --grad-pink: linear-gradient(180deg, #ffb3d8 0%, var(--pink-hot) 45%, var(--pink-deep) 100%);
-  --grad-gold: linear-gradient(180deg, #f9ecc0 0%, var(--gold) 45%, #9c7a24 100%);
+  --grad-pink: linear-gradient(180deg, #ffdcee 0%, var(--pink-hot) 45%, var(--pink-deep) 100%);
+  --grad-gold: linear-gradient(180deg, #f7f9fc 0%, var(--gold) 45%, #9096a4 100%);
   --grad-diamond: linear-gradient(180deg, #ffffff 0%, #e8e8ee 35%, #9fa0ab 55%, #f4f4f8 78%, #c9cad4 100%);
-  --shadow-pink: 0 6px 22px rgba(255, 31, 143, 0.45);
+  --shadow-pink: 0 6px 22px rgba(244, 127, 193, 0.45);
   --radius: 16px;
   --wrap: 1220px;
   --font-body: "Montserrat", system-ui, sans-serif;
@@ -40,13 +40,13 @@ body {
   background-image:
     radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.5) 45%, transparent 55%),
     radial-gradient(1px 1px at 78% 8%, rgba(255,255,255,.35) 45%, transparent 55%),
-    radial-gradient(1.5px 1.5px at 32% 64%, rgba(244,220,143,.4) 45%, transparent 55%),
+    radial-gradient(1.5px 1.5px at 32% 64%, rgba(228,233,243,.4) 45%, transparent 55%),
     radial-gradient(1px 1px at 88% 42%, rgba(255,255,255,.3) 45%, transparent 55%),
-    radial-gradient(1.5px 1.5px at 55% 88%, rgba(244,220,143,.3) 45%, transparent 55%),
+    radial-gradient(1.5px 1.5px at 55% 88%, rgba(228,233,243,.3) 45%, transparent 55%),
     radial-gradient(1px 1px at 8% 82%, rgba(255,255,255,.35) 45%, transparent 55%),
-    radial-gradient(ellipse 90% 60% at 15% 15%, rgba(58,42,58,.55), transparent 60%),
-    radial-gradient(ellipse 80% 55% at 85% 45%, rgba(46,32,46,.5), transparent 60%),
-    radial-gradient(ellipse 100% 70% at 45% 85%, rgba(40,28,40,.45), transparent 65%),
+    radial-gradient(ellipse 90% 60% at 15% 15%, rgba(52,48,60,.55), transparent 60%),
+    radial-gradient(ellipse 80% 55% at 85% 45%, rgba(42,40,52,.5), transparent 60%),
+    radial-gradient(ellipse 100% 70% at 45% 85%, rgba(36,34,46,.45), transparent 65%),
     linear-gradient(160deg, #0d090d 0%, #070607 40%, #0f0a0e 70%, #070607 100%);
 }
 
@@ -63,7 +63,7 @@ button { font-family: inherit; cursor: pointer; }
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 3px 0 rgba(122, 0, 62, .85)) drop-shadow(0 6px 14px rgba(255, 31, 143, .35));
+  filter: drop-shadow(0 3px 0 rgba(146, 72, 112, .85)) drop-shadow(0 6px 14px rgba(244, 127, 193, .35));
 }
 
 .txt-diamond {
@@ -116,16 +116,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 .btn--pink {
   color: var(--white);
-  background: linear-gradient(180deg, #ff5db1 0%, var(--pink) 55%, #d40f74 100%);
+  background: linear-gradient(180deg, #ffb1da 0%, var(--pink) 55%, #d65da5 100%);
   box-shadow: var(--shadow-pink), inset 0 1px 0 rgba(255,255,255,.5);
 }
 .btn--ghost {
   color: var(--gold-lite);
   border: 1px solid var(--gold);
-  background: rgba(212, 175, 55, .06);
+  background: rgba(197, 203, 214, .06);
 }
 .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
-.btn--pink:hover { box-shadow: 0 10px 28px rgba(255, 31, 143, .6), inset 0 1px 0 rgba(255,255,255,.5); }
+.btn--pink:hover { box-shadow: 0 10px 28px rgba(244, 127, 193, .6), inset 0 1px 0 rgba(255,255,255,.5); }
 .btn--sm { font-size: .68rem; padding: .7em 1.7em; }
 .btn--wide { width: 100%; }
 
@@ -148,17 +148,17 @@ button { font-family: inherit; cursor: pointer; }
 .product,
 .review,
 .newsletter__bar {
-  border: 1px solid rgba(212, 175, 55, .55);
+  border: 1px solid rgba(197, 203, 214, .55);
   box-shadow:
     0 0 0 3px rgba(0, 0, 0, .8),
-    0 0 0 4px rgba(212, 175, 55, .35),
+    0 0 0 4px rgba(197, 203, 214, .35),
     0 14px 34px rgba(0, 0, 0, .55);
 }
 
 /* ---------- topbar marquee ---------- */
 
 .topbar {
-  background: linear-gradient(90deg, #e40d7f, var(--pink-hot), #e40d7f);
+  background: linear-gradient(90deg, #e06aae, var(--pink-hot), #e06aae);
   color: var(--white);
   overflow: hidden;
   border-bottom: 1px solid rgba(0,0,0,.35);
@@ -186,7 +186,7 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: space-between;
   gap: 1rem;
   padding: .8rem clamp(1rem, 4vw, 3rem);
-  border-bottom: 1px solid rgba(212, 175, 55, .25);
+  border-bottom: 1px solid rgba(197, 203, 214, .25);
 }
 /* glass effect lives on a pseudo-element: backdrop-filter on .header itself
    would make it the containing block for the fixed mobile nav panel */
@@ -260,7 +260,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 38px; height: 38px;
   display: grid; place-items: center;
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, .4);
+  border: 1px solid rgba(197, 203, 214, .4);
   background: rgba(255, 255, 255, .04);
   color: var(--cream);
   transition: border-color .15s ease, color .15s ease, transform .15s ease;
@@ -277,7 +277,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--white);
   background: var(--pink);
   border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(255,31,143,.6);
+  box-shadow: 0 2px 8px rgba(244,127,193,.6);
 }
 .cart-count.bump { animation: bump .35s ease; }
 @keyframes bump { 40% { transform: scale(1.45); } }
@@ -298,7 +298,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- hero ---------- */
 
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid rgba(212,175,55,.2); }
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid rgba(197,203,214,.2); }
 .hero__inner {
   max-width: var(--wrap);
   margin: 0 auto;
@@ -366,13 +366,13 @@ button { font-family: inherit; cursor: pointer; }
 .hero__tagline strong { color: var(--pink-hot); font-weight: 700; }
 .hero__cta { display: flex; gap: .9rem; justify-content: center; margin-top: 1.6rem; flex-wrap: wrap; }
 
-.photo--hero { aspect-ratio: 4 / 5; border-radius: 18px; box-shadow: 0 0 0 1px rgba(212,175,55,.5), 0 24px 60px rgba(0,0,0,.6); }
+.photo--hero { aspect-ratio: 4 / 5; border-radius: 18px; box-shadow: 0 0 0 1px rgba(197,203,214,.5), 0 24px 60px rgba(0,0,0,.6); }
 
 .hero__corner {
   position: absolute;
   width: clamp(180px, 26vw, 400px);
   aspect-ratio: 1;
-  background: url("../img/glitter.jpg?v=2") center / cover no-repeat;
+  background: url("../img/glitter-silver.jpg") center / cover no-repeat;
   mix-blend-mode: screen;
   opacity: .95;
   pointer-events: none;
@@ -388,7 +388,7 @@ button { font-family: inherit; cursor: pointer; }
   opacity: .85;
   animation: floaty 5.5s ease-in-out infinite;
   pointer-events: none;
-  filter: drop-shadow(0 0 10px rgba(255,31,143,.55));
+  filter: drop-shadow(0 0 10px rgba(244,127,193,.55));
 }
 .floating-heart--1 { top: 22%; left: 4%; }
 .floating-heart--2 { bottom: 18%; left: 12%; animation-delay: 1.4s; }
@@ -447,10 +447,10 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: .2em;
   text-transform: uppercase;
   text-align: center;
-  color: #241a06;
+  color: #1d222b;
   padding: .8em;
   border-radius: 0 0 14px 14px;
-  background: linear-gradient(180deg, var(--gold-lite), var(--gold) 55%, #a8842a);
+  background: linear-gradient(180deg, var(--gold-lite), var(--gold) 55%, #99a0ad);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 10px 24px rgba(0,0,0,.45);
 }
 
@@ -584,7 +584,7 @@ button { font-family: inherit; cursor: pointer; }
   transform: translateY(-6px);
   box-shadow:
     0 0 0 3px rgba(0,0,0,.8),
-    0 0 0 4px rgba(255,31,143,.5),
+    0 0 0 4px rgba(244,127,193,.5),
     0 22px 44px rgba(0,0,0,.65);
 }
 .product__media { aspect-ratio: 1; border-radius: 10px; position: relative; }
@@ -600,7 +600,7 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--pink);
   padding: .5em .9em;
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(255,31,143,.5);
+  box-shadow: 0 4px 12px rgba(244,127,193,.5);
 }
 .product__name { font-size: .95rem; font-weight: 700; margin-top: .4rem; color: var(--white); }
 .product__spec { font-size: .72rem; font-weight: 500; color: #bfb4bd; letter-spacing: .04em; }
@@ -660,7 +660,7 @@ button { font-family: inherit; cursor: pointer; }
   grid-template-columns: repeat(4, 1fr);
   gap: .6rem;
   padding: .7rem;
-  border: 1px solid rgba(212,175,55,.5);
+  border: 1px solid rgba(197,203,214,.5);
   border-radius: 14px;
   background: rgba(0,0,0,.4);
 }
@@ -699,20 +699,20 @@ button { font-family: inherit; cursor: pointer; }
   font-size: .85rem;
   color: var(--cream);
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(212,175,55,.45);
+  border: 1px solid rgba(197,203,214,.45);
   border-radius: 999px;
   padding: .75em 1.3em;
   outline: none;
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 .newsletter__input::placeholder { color: #9d8fa0; }
-.newsletter__input:focus { border-color: var(--pink-hot); box-shadow: 0 0 0 3px rgba(255,31,143,.2); }
+.newsletter__input:focus { border-color: var(--pink-hot); box-shadow: 0 0 0 3px rgba(244,127,193,.2); }
 .newsletter__msg { flex-basis: 100%; text-align: center; font-size: .75rem; letter-spacing: .1em; color: var(--gold-lite); min-height: 1em; }
 
 /* ---------- footer ---------- */
 
 .footer {
-  border-top: 1px solid rgba(212,175,55,.3);
+  border-top: 1px solid rgba(197,203,214,.3);
   background: linear-gradient(180deg, rgba(14,10,13,.6), rgba(5,4,5,.95));
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2.5rem) 1.4rem;
 }
@@ -751,7 +751,7 @@ button { font-family: inherit; cursor: pointer; }
   text-align: center;
   margin-top: clamp(1.8rem, 4vw, 2.8rem);
   padding-top: 1.2rem;
-  border-top: 1px solid rgba(212,175,55,.18);
+  border-top: 1px solid rgba(197,203,214,.18);
   font-size: .7rem;
   letter-spacing: .28em;
   text-transform: uppercase;
@@ -766,7 +766,7 @@ button { font-family: inherit; cursor: pointer; }
   left: 50%;
   bottom: 26px;
   transform: translate(-50%, 20px);
-  background: linear-gradient(180deg, #ff5db1, var(--pink));
+  background: linear-gradient(180deg, #ffb1da, var(--pink));
   color: var(--white);
   font-size: .78rem;
   font-weight: 700;
@@ -825,7 +825,7 @@ button { font-family: inherit; cursor: pointer; }
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background: linear-gradient(160deg, #100b10 0%, #090709 55%, #0e090d 100%);
-    border-left: 1px solid rgba(212,175,55,.35);
+    border-left: 1px solid rgba(197,203,214,.35);
     transform: translateX(102%);
     transition: transform .3s ease;
     z-index: 60;
@@ -905,7 +905,7 @@ button { font-family: inherit; cursor: pointer; }
   top: 50%;
   width: clamp(130px, 18vw, 300px);
   aspect-ratio: 1;
-  background: url("../img/glitter.jpg?v=2") center / cover no-repeat;
+  background: url("../img/glitter-silver.jpg") center / cover no-repeat;
   mix-blend-mode: screen;
   opacity: .85;
   pointer-events: none;
@@ -941,9 +941,9 @@ button { font-family: inherit; cursor: pointer; }
   width: min(92vw, 420px);
   margin-bottom: max(1.2rem, env(safe-area-inset-bottom));
   background: linear-gradient(165deg, #17101685 0%, #0b080b00 60%), #0d090d;
-  border: 1px solid rgba(212, 175, 55, .55);
+  border: 1px solid rgba(197, 203, 214, .55);
   border-radius: 22px;
-  box-shadow: 0 0 0 4px rgba(0,0,0,.6), 0 24px 60px rgba(0,0,0,.7), 0 0 40px rgba(255,31,143,.18);
+  box-shadow: 0 0 0 4px rgba(0,0,0,.6), 0 24px 60px rgba(0,0,0,.7), 0 0 40px rgba(244,127,193,.18);
   padding: 1.6rem 1.5rem 1.1rem;
   text-align: center;
   transform: translateY(24px);
@@ -966,7 +966,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 72px; height: 72px;
   border-radius: 18px;
   margin: 0 auto .8rem;
-  border: 1px solid rgba(212,175,55,.5);
+  border: 1px solid rgba(197,203,214,.5);
   box-shadow: 0 8px 22px rgba(0,0,0,.6);
 }
 .pwa__title {
@@ -1032,7 +1032,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--white);
   background: var(--grad-pink);
   border-radius: 50%;
-  box-shadow: 0 3px 10px rgba(255,31,143,.45);
+  box-shadow: 0 3px 10px rgba(244,127,193,.45);
 }
 .pwa__steps strong { color: var(--white); }
 .pwa__install { width: 100%; font-size: .85rem; }
