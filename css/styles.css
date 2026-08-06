@@ -866,7 +866,7 @@ button { font-family: inherit; cursor: pointer; }
    REAL IMAGERY — generated campaign photography (img/)
    ========================================================================== */
 
-.photo--hero { background-image: url("../img/hero.jpg?v=2"); background-position: 50% 20%; }
+.photo--hero { background-image: url("../img/hero.jpg?v=4"); background-position: 50% 20%; }
 
 .photo--tier1 { background-image: url("../img/tier-1.jpg?v=2"); }
 .photo--tier2 { background-image: url("../img/tier-2.jpg?v=2"); }
