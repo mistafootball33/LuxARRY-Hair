@@ -19,7 +19,6 @@
   });
 
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
   /* ----- cart + toast ----- */
   const cartCount = document.getElementById("cartCount");
@@ -41,27 +40,58 @@
       cartCount.classList.remove("bump");
       void cartCount.offsetWidth; /* restart animation */
       cartCount.classList.add("bump");
-      const name = btn.closest(".product")?.dataset.name || "Item";
+      const name = btn.closest("[data-name]")?.dataset.name || "Item";
       showToast(`${name} added to cart 💗`);
     });
   });
 
-  /* ----- newsletter ----- */
-  const form = document.getElementById("newsletterForm");
-  const email = document.getElementById("newsletterEmail");
-  const msg = document.getElementById("newsletterMsg");
+  /* ----- newsletter forms (footer + modal) ----- */
+  document.querySelectorAll(".js-newsletter").forEach((form) => {
+    const email = form.querySelector('input[type="email"]');
+    const msg = form.querySelector('[role="status"]');
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!email.checkValidity()) {
+        msg.textContent = "Please enter a valid email address.";
+        email.focus();
+        return;
+      }
+      msg.textContent = "You're in! Check your inbox. ✨";
+      form.reset();
+      if (form.closest(".mailmodal")) {
+        localStorage.setItem("luxarry-mail-snooze", String(Date.now() + 365 * 864e5));
+        setTimeout(closeMailModal, 1400);
+      }
+    });
+  });
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!email.checkValidity()) {
-      msg.textContent = "Please enter a valid email address.";
-      msg.style.color = "#ff6fae";
-      email.focus();
-      return;
+  /* ----- mailing-list modal ----- */
+  const mailModal = document.getElementById("mailModal");
+
+  const closeMailModal = () => {
+    if (!mailModal || mailModal.hidden) return;
+    mailModal.hidden = true;
+    if (!localStorage.getItem("luxarry-mail-snooze") || Number(localStorage.getItem("luxarry-mail-snooze")) < Date.now()) {
+      localStorage.setItem("luxarry-mail-snooze", String(Date.now() + 7 * 864e5));
     }
-    msg.textContent = "You're in! Check your inbox for 10% off. ✨";
-    msg.style.color = "";
-    form.reset();
+  };
+
+  if (mailModal) {
+    const snoozed = Number(localStorage.getItem("luxarry-mail-snooze") || 0) > Date.now();
+    const standalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone === true;
+    if (!snoozed && !standalone) {
+      setTimeout(() => { mailModal.hidden = false; }, 1500);
+    }
+    mailModal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-mail-close]")) closeMailModal();
+    });
+  }
+
+  /* ----- escape closes menu + modal ----- */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { closeMenu(); closeMailModal(); }
   });
 
   /* ----- reveal on scroll ----- */

@@ -122,11 +122,14 @@
   });
   window.addEventListener("appinstalled", () => close(true));
 
-  /* open after the visitor has settled in */
-  setTimeout(() => {
+  /* open after the visitor has settled in — and never on top of the mailing-list modal */
+  const tryOpen = () => {
+    const mail = document.getElementById("mailModal");
+    if (mail && !mail.hidden) return setTimeout(tryOpen, 8000);
     if (deferredPrompt) showInstallButton();
     else showSteps();
     document.body.appendChild(wrap);
     requestAnimationFrame(() => wrap.classList.add("pwa--in"));
-  }, 6000);
+  };
+  setTimeout(tryOpen, 16000);
 })();
