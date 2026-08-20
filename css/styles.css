@@ -254,52 +254,78 @@ button { font-family: inherit; cursor: pointer; }
 .nav__link:hover::after, .nav__link--active::after { right: 0; }
 .nav__link--active { color: var(--white); }
 
-/* ---------- hero ---------- */
+/* ---------- hero (studio banner: type behind cut-out model, button in front) ---------- */
 
 .hero {
   position: relative;
-  min-height: clamp(420px, 62vw, 640px);
+  height: clamp(440px, 46vw, 620px);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(10,9,11,.92) 22%, rgba(10,9,11,.45) 55%, rgba(10,9,11,.15) 78%),
-    url("../img/hero.jpg?v=4") right 22% / auto 118% no-repeat,
-    linear-gradient(160deg, #16131a 0%, #0b0a0d 45%, #141118 100%);
-  display: grid;
-  place-items: center;
+    radial-gradient(90% 120% at 50% 0%, rgba(64,58,70,.55) 0%, transparent 55%),
+    radial-gradient(70% 90% at 82% 60%, rgba(52,46,58,.4), transparent 65%),
+    radial-gradient(70% 90% at 18% 60%, rgba(48,42,54,.4), transparent 65%),
+    linear-gradient(180deg, #17141b 0%, #0b0a0d 60%, #060507 100%);
 }
-.hero__inner {
-  width: 100%;
-  max-width: var(--wrap);
-  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2.5rem);
-  display: grid;
-  justify-items: start;
-  gap: 1.6rem;
+.hero::after {
+  /* soft floor shadow like a studio sweep */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 22%;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.75));
 }
-.hero__stack { position: relative; display: grid; line-height: 1; }
+.hero__stack {
+  position: absolute;
+  z-index: 1;
+  top: clamp(2rem, 6vw, 5.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(96vw, 1180px);
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+}
 .hero__big {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(4rem, 13vw, 10.5rem);
-  letter-spacing: .04em;
+  font-size: clamp(4.4rem, 15.5vw, 13rem);
+  letter-spacing: .06em;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffc9e5 0%, var(--pink-hot) 55%, var(--pink-deep) 100%);
+  background: linear-gradient(180deg, #f6a9d2 0%, #e37fb4 55%, #c95d97 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  opacity: .92;
 }
 .hero__script {
   position: absolute;
-  top: 46%;
-  left: 4%;
-  transform: translateY(-58%) rotate(-3deg);
+  top: 0;
+  left: clamp(.5rem, 6vw, 5rem);
+  transform: translateY(-38%) rotate(-4deg);
   font-family: var(--font-script);
-  font-size: clamp(3rem, 8.5vw, 6.8rem);
+  font-size: clamp(3rem, 9vw, 7.6rem);
   color: var(--white);
   text-shadow: 0 4px 24px rgba(0,0,0,.55);
-  pointer-events: none;
 }
-.hero__cta { margin-left: .4rem; }
+.hero__model {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 92%;
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,.65));
+}
+.hero__cta {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: clamp(2.2rem, 6vw, 4.2rem);
+  transform: translateX(-50%);
+  min-width: 172px;
+}
+.hero__cta:hover { transform: translateX(-50%) translateY(-2px); }
 
 /* ---------- pay-later strip ---------- */
 
@@ -959,7 +985,9 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 560px) {
   .trending__grid { grid-template-columns: 1fr 1fr; }
   .product__name { font-size: .8rem; }
-  .hero { min-height: 480px; background-position: right -80px top, right 30% top, 0 0; }
+  .hero { height: 480px; }
+  .hero__model { height: 84%; }
+  .hero__stack { top: 3.4rem; }
   .footer__grid { grid-template-columns: 1fr; }
   .footer__base { justify-content: center; text-align: center; }
   .selfies__photos { min-height: 280px; }
