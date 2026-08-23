@@ -1,9 +1,9 @@
 /* LuxARRY Hair — service worker */
-const CACHE = "luxarry-v6";
+const CACHE = "luxarry-v7";
 const PRECACHE = [
   "./",
   "./index.html",
-  "./css/styles.css?v=8",
+  "./css/styles.css?v=9",
   "./js/main.js",
   "./js/pwa.js",
   "./manifest.webmanifest",

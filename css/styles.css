@@ -278,12 +278,12 @@ button { font-family: inherit; cursor: pointer; }
   /* faded close-up of the model melting into the backdrop, sample-style */
   position: absolute;
   inset: 0 0 0 auto;
-  width: clamp(280px, 42%, 560px);
-  background: url("../img/hero.jpg?v=5") center 14% / cover no-repeat;
-  opacity: .38;
-  filter: grayscale(35%) brightness(.8) contrast(1.05);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 78%, rgba(0,0,0,.5) 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 78%, rgba(0,0,0,.5) 100%);
+  width: clamp(300px, 46%, 620px);
+  background: url("../img/hero.jpg?v=6") 62% 12% / 165% no-repeat;
+  opacity: .3;
+  filter: grayscale(65%) brightness(.72) contrast(1.08);
+  -webkit-mask-image: radial-gradient(115% 95% at 92% 38%, #000 32%, rgba(0,0,0,.4) 62%, transparent 82%);
+  mask-image: radial-gradient(115% 95% at 92% 38%, #000 32%, rgba(0,0,0,.4) 62%, transparent 82%);
 }
 .hero__stack {
   position: absolute;
