@@ -89,9 +89,55 @@
     });
   }
 
-  /* ----- escape closes menu + modal ----- */
+  /* ----- Acuity booking modal ----- */
+  const bookModal = document.getElementById("bookModal");
+  const bookBody = document.getElementById("bookModalBody");
+  let acuityLoaded = false;
+
+  const openBookModal = () => {
+    if (!bookModal) return;
+    const url = bookModal.dataset.acuityUrl || "";
+    if (!acuityLoaded) {
+      if (!url || url.includes("YOUR-ACUITY")) {
+        bookBody.innerHTML =
+          '<div class="bookmodal__setup">' +
+          "<p><strong>Online booking is almost ready!</strong></p>" +
+          "<p>DM us on Instagram <strong>@LUXARRYHAIR</strong> or email " +
+          '<a href="mailto:hello@luxarryhair.com">hello@luxarryhair.com</a> to book your appointment today.</p>' +
+          "</div>";
+      } else {
+        bookBody.innerHTML =
+          '<iframe class="bookmodal__frame" src="' + url +
+          '" title="Schedule an appointment with LuxARRY Hair" loading="eager"></iframe>';
+      }
+      acuityLoaded = true;
+    }
+    bookModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeBookModal = () => {
+    if (!bookModal || bookModal.hidden) return;
+    bookModal.hidden = true;
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll(".js-book").forEach((el) =>
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeMenu();
+      openBookModal();
+    })
+  );
+  if (bookModal) {
+    bookModal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-book-close]")) closeBookModal();
+    });
+  }
+
+  /* ----- escape closes menu + modals ----- */
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { closeMenu(); closeMailModal(); }
+    if (e.key === "Escape") { closeMenu(); closeMailModal(); closeBookModal(); }
   });
 
   /* ----- reveal on scroll ----- */
