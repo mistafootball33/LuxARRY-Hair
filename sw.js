@@ -1,9 +1,9 @@
 /* LuxAARY Designs — service worker */
-const CACHE = "luxarry-v10";
+const CACHE = "luxarry-v11";
 const PRECACHE = [
   "./",
   "./index.html",
-  "./css/styles.css?v=11",
+  "./css/styles.css?v=12",
   "./js/main.js?v=12",
   "./js/pwa.js?v=12",
   "./manifest.webmanifest",
