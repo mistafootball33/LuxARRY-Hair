@@ -1,4 +1,4 @@
-# LuxARRY Hair 💗
+# LuxAARY Designs 💗
 
 Luxury hair e-commerce landing page — **black satin, hot pink gloss, champagne gold, diamond shimmer**.
 
@@ -42,4 +42,4 @@ Slot names: `photo--hero`, `photo--tier1..3`, `photo--straight/curly/wavy`, `pho
 
 ---
 
-© 2025 LuxARRY Hair. All Rights Reserved.
+© 2026 LuxAARY Designs. All Rights Reserved.

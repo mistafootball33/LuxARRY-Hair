@@ -2,7 +2,7 @@
   "name": "luxarry-hair",
   "version": "1.0.0",
   "private": true,
-  "description": "LuxARRY Hair — luxury hair e-commerce landing page. Fully responsive, dependency-free static site.",
+  "description": "LuxAARY Designs — luxury hair e-commerce landing page. Fully responsive, dependency-free static site.",
   "scripts": {
     "dev": "npx serve . -l 8080",
     "start": "npx serve . -l 8080"

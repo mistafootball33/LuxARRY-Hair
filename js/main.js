@@ -1,4 +1,4 @@
-/* LuxARRY Hair — interactions */
+/* LuxAARY Designs — interactions */
 (() => {
   "use strict";
 
@@ -102,13 +102,13 @@
         bookBody.innerHTML =
           '<div class="bookmodal__setup">' +
           "<p><strong>Online booking is almost ready!</strong></p>" +
-          "<p>DM us on Instagram <strong>@LUXARRYHAIR</strong> or email " +
-          '<a href="mailto:hello@luxarryhair.com">hello@luxarryhair.com</a> to book your appointment today.</p>' +
+          "<p>DM us on Instagram <strong>@LUXAARYDESIGNS</strong> or email " +
+          '<a href="mailto:hello@luxaarydesigns.com">hello@luxaarydesigns.com</a> to book your appointment today.</p>' +
           "</div>";
       } else {
         bookBody.innerHTML =
           '<iframe class="bookmodal__frame" src="' + url +
-          '" title="Schedule an appointment with LuxARRY Hair" loading="eager"></iframe>';
+          '" title="Schedule an appointment with LuxAARY Designs" loading="eager"></iframe>';
       }
       acuityLoaded = true;
     }

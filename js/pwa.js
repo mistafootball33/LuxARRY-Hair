@@ -1,4 +1,4 @@
-/* LuxARRY Hair — PWA install prompt with per-device instructions */
+/* LuxAARY Designs — PWA install prompt with per-device instructions */
 (() => {
   "use strict";
 
@@ -51,17 +51,17 @@
   const iosSteps = steps([
     `Tap the <strong>Share</strong> button ${shareIcon} in your browser bar`,
     `Scroll and tap <strong>Add to Home Screen</strong> ${plusIcon}`,
-    `Tap <strong>Add</strong> — LuxARRY appears on your home screen 💗`
+    `Tap <strong>Add</strong> — LuxAARY appears on your home screen 💗`
   ]);
   const androidSteps = steps([
     `Tap the <strong>menu</strong> button ${menuIcon} in Chrome`,
     `Tap <strong>Add to Home screen</strong> (or <strong>Install app</strong>)`,
-    `Confirm — LuxARRY appears on your home screen 💗`
+    `Confirm — LuxAARY appears on your home screen 💗`
   ]);
   const desktopSteps = steps([
     `Look for the <strong>install icon</strong> ${plusIcon} in the address bar`,
     `Click it and choose <strong>Install</strong>`,
-    `LuxARRY opens in its own window like a real app 💗`
+    `LuxAARY opens in its own window like a real app 💗`
   ]);
 
   /* build the popup */
@@ -69,13 +69,13 @@
   wrap.className = "pwa";
   wrap.setAttribute("role", "dialog");
   wrap.setAttribute("aria-modal", "true");
-  wrap.setAttribute("aria-label", "Install the LuxARRY Hair app");
+  wrap.setAttribute("aria-label", "Install the LuxAARY Designs app");
   wrap.innerHTML = `
     <div class="pwa__backdrop" data-close></div>
     <div class="pwa__card">
       <button class="pwa__x" type="button" aria-label="Close" data-close>&times;</button>
       <img class="pwa__icon" src="img/icons/icon-192.png" alt="" width="72" height="72" />
-      <h3 class="pwa__title">Get the <em>Lux</em>ARRY App</h3>
+      <h3 class="pwa__title">Get the <em>Lux</em>AARY App</h3>
       <p class="pwa__sub">Add us to your home screen for one-tap access to new drops, deals &amp; hair inspo.</p>
       <div class="pwa__body"></div>
       <p class="pwa__later"><button type="button" data-close>Maybe later</button></p>
