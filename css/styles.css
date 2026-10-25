@@ -454,7 +454,7 @@ button { font-family: inherit; cursor: pointer; }
 .book__photo {
   min-height: clamp(300px, 34vw, 460px);
   align-self: stretch;
-  background: url("../img/polaroid-2.jpg?v=2") center 12% / cover no-repeat;
+  background: url("../img/polaroid-2.jpg?v=3") center 12% / cover no-repeat;
   -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent 100%);
   mask-image: linear-gradient(90deg, #000 78%, transparent 100%);
 }
